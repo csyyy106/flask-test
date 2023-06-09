@@ -8,5 +8,5 @@ COPY . .
 RUN pip install -r requirements.txt -q -i https://pypi.tuna.tsinghua.edu.cn/simple && \
 rm -rf /var/cache/apk/*
 
-expose 2222
+expose 5000
 CMD ["python3", "app.py"]
