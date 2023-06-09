@@ -13,11 +13,11 @@ def get_home():
     return tx
 
 
-@app.route('/get_job_info', methods=['GET', 'POST'])
-def get_job_info():
+@app.route('/get_job_info/<name>', methods=['GET', 'POST'])
+def get_job_info(name):
     # 获取请求参数
     # job_name = request.form.get('job_name')           # post请求
-    job_name = request.args.get('job_name')  # get请求
+    job_name = name  # get请求
     job_names = get_all_jobname()  # 所有的jobname
     if job_name not in job_names:
         return '您输入的*job_name*有误,请再试一次！'
