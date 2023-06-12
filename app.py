@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def get_home():
-    tx = '请访问路由:“ /get_job_info?job_name=name ”,并将=后(name)的值改为真实存在的job name。'
+    tx = '请访问路由:“ /job_name/name ”,并将 "name" 的值改为真实存在的jenkins job名称，例：/job_name/ec-cs'
     return tx
 
 
-@app.route('/get_job_info/<name>', methods=['GET', 'POST'])
+@app.route('/job_name/<name>', methods=['GET', 'POST'])
 def get_job_info(name):
     # 获取请求参数
     # job_name = request.form.get('job_name')           # post请求
