@@ -57,7 +57,9 @@ def get_all_jobname():
     username='siyuan.cui@sayweee.com'
 
     jenkins_data = jenkins.Jenkins(jenkins_url,username=username,password=jenkins_token)
-    jobs=jenkins_data.get_all_jobs()            ##获取jenkins上所有的job name
+    all_jobs=jenkins_data.get_all_jobs()  ##获取jenkins上所有的job name
+    jobs = json.loads(all_jobs)
+    
     # print(jobs)
 
     list_1 = [job['name'] for job in jobs]
