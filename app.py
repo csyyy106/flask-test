@@ -28,7 +28,7 @@ def get_job_info(name):
         jenkins_token = '11dca30fed5e7febd21fb70f73ab25714a'
         # 构建 Jenkins API 请求 URL
         api_url = f'{jenkins_url}/job/{job_name}/lastBuild/api/json'
-        response = requests.get(api_url, auth=('siyuan.cui@sayweee.com', jenkins_token)).text
+        response = requests.get(api_url, auth=('siyuan.cui@sayweee.com', jenkins_token))
         data = json.loads(response)
         actions = data.get("actions", [])
         for action in actions:
