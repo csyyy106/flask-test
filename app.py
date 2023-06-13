@@ -20,7 +20,6 @@ def get_job_info(name):
     # job_name = request.args.get('job_name')             ##Get请求
     job_name = name                                     #动态url  name等于job_name
     job_names = get_all_jobname()                       ##所有的 Jenkins job
-    print(job_name)
     if job_name not in job_names:
         return ('您输入的*jenkins job名称有误,请再试一次！')
     else:
@@ -60,7 +59,7 @@ def get_all_jobname():
     all_jobs=jenkins_data.get_all_jobs()  ##获取jenkins上所有的job name
     jobs = json.loads(all_jobs)
     
-    # print(jobs)
+    print(jobs)
 
     list_1 = [job['name'] for job in jobs]
     return  list_1
